@@ -1,10 +1,9 @@
 package com.zhss.springbootdemo;
 
+import com.zhss.springbootdemo.config.DruidDataSourceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Import;
 
 /**
  * @EnableAutoConfiguration 注解会自动去扫描引入的依赖,然后自动完成相应的配置:spring mvc,spring,tomcat
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @SpringBootApplication 相当于以上三个注解组合
  */
 @SpringBootApplication
+@Import(DruidDataSourceConfig.class)
 public class SpringbootDemoApplication {
 
     public static void main(String[] args) {
